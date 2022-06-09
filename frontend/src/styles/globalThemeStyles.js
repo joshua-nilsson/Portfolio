@@ -52,7 +52,7 @@ export const buttonPrimaryTheme = tw`
 `;
 
 export const buttonSecondaryTheme = tw`
-	bg-white
+	bg-whiteExact
 	text-primary
 	hover:text-white active:text-white
 `;
