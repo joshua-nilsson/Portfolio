@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, html, body { font-family: 'Inter', sans-serif; }
+
+  html::-webkit-scrollbar {
+    width: 1rem;
+    background-color: rgba(93,80,191,0.1);
+  }
+
+  html::-webkit-scrollbar-track, html::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  html::-webkit-scrollbar-track { margin-block: .25rem; }
+  html::-webkit-scrollbar-thumb { background: linear-gradient(180deg, rgba(150,128,255,1) 0%, rgba(93,80,191,1) 100%); }
+  html::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(150,128,255,0.95) 0%, rgba(93,80,191,0.95) 100%); }
+
+  body { background-position: 0 1%; }
+  @media (min-width: 350px) { body { background-position: 0 1% } }
+  @media (min-width: 400px) { body { background-position: 0 0.75% } }
+  @media (min-width: 640px) { body { background-position: 0 0.5% } }
+  @media (min-width: 768px) { body { background-position: 0 1.25% } }
+  @media (min-width: 850px) { body { background-position: 0 0.75% } }
+  @media (min-width: 1024px) { body { background-position: 0 -0.25% } }
+  @media (min-width: 1125px) { body { background-position: 0 -0.75% } }
+  @media (min-width: 1280px) { body { background-position: 0 4% } }
+  @supports (background: -webkit-named-image(i)) { @media (min-width: 1280px) { body { background-position: 0 7% !important; } } }
+  @supports (background: -webkit-named-image(i)) { @media (min-width: 1360px) { body { background-position: 0 6% !important; } } }
+  @media (min-width: 1440px) { body { background-position: 0 3.5% } }
+  @media (min-width: 1536px) { body { background-position: 0 2.75% } }
+  @media (min-width: 2000px) { body { background-position: 0 1%; } }
+  @media (min-width: 2250px) { body { background-position: 0 -0.5%; } }
+  @media (min-width: 2500px) { body { background-position: 0 -1.5%; } }
+
+  .sm-levitate,
+  .md-levitate,
+  .lg-levitate {
+    position: absolute;
+    transform: none;
+    transition: transform 1.8s 0.45s cubic-bezier(0.165, 0.840, 0.440, 1.000), opacity 0.8s 0.45s cubic-bezier(0.445, 0.050, 0.550, 0.950);
+  }
+
+  .sm-levitate { animation: sm-levitate 12.4s 1.2s alternate infinite cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+  .md-levitate { animation: md-levitate 12.8s 1.58s alternate infinite cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+  .lg-levitate { animation: lg-levitate 13.5s 2.25s alternate infinite cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+}
+
+@layer components {
+
+  *, html, body { @apply antialiased scroll-smooth }
+
+  body {
+    @apply
+    bg-blob bg-no-repeat bg-[length:120%] bg-white text-black
+    sm:bg-[length:111%] md:bg-[length:115%] lg:bg-[length:125%] xl:bg-[length:110%] 2xl:bg-[length:102%]
+  }
+
+  footer { @apply border-b-[1rem] border-b-tertiary }
+  hr { @apply transition-all duration-200 }
+}
+
+/* THEME COLOR REFERENCE */
+themeColors {
+    color: #FFFFFF;  /* MAIN NAV BG / SIDEBAR BG / TABLE BG / STACKS TOP CARD BG / MODAL BG / ELEMENT BLOCK HOVER DROPDOWN ICON HOVER ARROW / ICON */
+    color: #F5F5F5;  /* LIST ITEM HOVER BG/ TABLE ROW HOVER BG / MAIN NAV BG ALT */
+    color: #EDF1F7;  /* STACKS MENU BG / NOTIFICATIONS TOP BG / SEARCH TAG BG / INPUT HOVER BG / DISABLED BUTTON BG / CHECKBOX BG */
+    color: #E8F0FE;  /* LOGIN INPUT BG */
+    color: #DDE3EE;  /* SEARCH DROPDOWN BG / SEARCH TAG ALT BG */
+    color: #222222;  /* INPUT TEXT / LOG IN TO CS HEADING TEXT / FORGOT PASSWORD? TEXT */
+    color: #475161;  /* MAIN DARK TEXT / DARK ICON COLOR / TOOLTIP HOVER BG / PAGE TITLE TEXT / STACKS BOTTOM CARD +76 OTHERS & DATE TEXT */
+    color: #647696;  /* MAIN LIGHT TEXT / ICON COLOR / DROPDOWN ICON HOVER ADJACENT TO ORGANIZATION NAME SELECT */
+    color: #697B9B;  /* VERTICAL & HORIZONTAL SCROLLBAR ACTIVE / SAME AS ABOVE? THE ONE ABOVE IS USED FAR MORE */
+    color: #A9B6CB;  /* MAIN LIGHT ALT TEXT / TABLE HEADER / TAB TEXT / ELEMENT BLOCK DROPDOWN ICON HOVER BG / DROPDOWN ICON ADJACENT TO ICON (EX: TABLE VIEW) / DISABLED BUTTON TEXT / STACKS BOTTOM CARD ICON (CLOCK) / TABLE ROW HOVER CHECKBOX BORDER */
+    color: #6C5CE7;  /* MAIN ACCENT TEXT & BG / TAB HOVER TEXT / TAB ACTIVE TEXT / USER INITIALS TEXTD / CHECKBOX BORDER HOVER / LOGIN SIDE BG */
+    color: #5D50BF;  /* MAIN ACCENT DARK HOVER */
+    color: #7D71E0;  /* MAIN ACCENT LIGHT HOVER */
+    color: #BBB4F4;  /* CHECKBOX / BUTTON FOCUS OUTLINE */
+    color: #FAFAFA;  /* STACKS BOTTOM CARD BG */
+    color: #F7F9FC;  /* INSIDE SIDEBAR BG / ELEMENT BLOCK HOVER BG */
+    color: #E39059;  /* DOT */
+    color: #FFD600;  /* DOT */
+    color: #FFD300;  /* DOT */
+    color: #A6EE70;  /* DOT */
+    color: #52E1FF;  /* DOT */
+    color: #52A4FF;  /* DOT */
+    color: #5279FF;  /* DOT */
+    color: #577AFF;  /* DOT */
+    color: #4BA105;  /* DOT */
+    color: #419701;  /* DOT */
+    color: #067897;  /* DOT */
+    color: #DA8653;  /* DRAFT DOT */
+    color: #D62400;  /* ERROR / TRASH ICON HOVER */
+    color: #F3BEB3;  /* ERROR ACCENT  */
+    color: #FFEEEB;  /* TRASH ICON HOVER BG  */
+    color: #007A52;  /* SUCCESS */
+    color: #F3F6FA;  /* LOGIN BG / LAZY LOADING ENTRY CONTENT BG */
+    color: #F6F8FB;  /* LAZY LOADING ALT BG / SAME AS ABOVE? THE ONE ABOVE IS USED FAR MORE */
+    color: #C3CAD7;  /* VERTICAL & HORIZONTAL SCROLLBAR HOVER */
+    color: #CBD3DE;  /* HAMBURGER MENU HOVER BG / ICON ACCENT */
+    color: #C7D0E1;  /* HAMBURGER MENU HOVER BG / ICON ACCENT / SAME AS ABOVE? THE ONE ABOVE IS USED FAR MORE */
+    color: #BDC4D1;  /* VERTICAL SCROLLBAR HOVER */
+    color: #B8C2D2;  /* VERTICAL SCROLLBAR HOVER / SAME AS ABOVE? THE ONE ABOVE IS USED FAR MORE */
+    color: #DFE2E9;  /* VERTICAL & HORIZONTAL SCROLLBAR /  */
+    color: #EB5646;  /* LOGO */
+    color: #EA624A;  /* LOGIN CIRCLES */
+    color: #5A20B8;  /* LOGIN CIRCLES LIGHT */
+    color: #300565;  /* LOGIN CIRCLES DARK */
+    color: #25C2A3;  /* WIDGETS TAB ACTIVE TEXT / CHOOSE ASSETS BUTTON TEXT & BORDER */
+    color: #EEEEEE;  /* WIDGETS TAB HOVER BG */
+}
+
+/*----------------------------------------------------------------
+
+MAIN FONT-FAMILY: INTER
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+</style>
+
+font-family: 'Inter', sans-serif;
+
+
+BACKUP FONT-FAMILY: MONTSERRAT
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style>
+
+font-family: 'Montserrat', sans-serif;
+
+
+BOTH FONT-FAMILIES: INTER & MONTSERRAT
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style>
+
+font-family: 'Inter', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Inter', 'Montserrat', sans-serif;
+
+----------------------------------------------------------------*/

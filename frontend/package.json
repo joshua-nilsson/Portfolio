@@ -1,0 +1,74 @@
+{
+  "babelMacros": {
+    "twin": {
+      "config": "./tailwind.config.js",
+      "preset": "styled-components"
+    }
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
+    "@sanity/client": "^3.3.0",
+    "@sanity/image-url": "^1.0.1",
+    "autoprefixer": "^10.4.4",
+    "framer-motion": "^6.3.3",
+    "next": "12.1.5",
+    "next-sitemap": "^3.0.5",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "prop-types": "^15.8.1",
+    "react": "18.0.0",
+    "react-canvas-confetti": "^1.3.0",
+    "react-dom": "18.0.0",
+    "react-fast-marquee": "^1.3.1",
+    "react-hook-form": "^7.31.1",
+    "react-icons": "^4.3.1",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-scrollspy": "^3.4.3",
+    "react-spinners": "^0.11.0",
+    "react-tooltip": "^4.2.21",
+    "react-typing-effect": "^2.0.5",
+    "styled-components": "^5.3.5",
+    "swiper": "^8.1.0",
+    "tailwindcss": "^3.0.24",
+    "twin.macro": "^2.8.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^14.1.1",
+    "cypress": "^9.5.4",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "jest": "^27.5.1",
+    "jest-css-modules-transform": "^4.3.0",
+    "prettier": "^2.6.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  }
+}

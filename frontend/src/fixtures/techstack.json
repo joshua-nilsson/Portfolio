@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "image": "/mongodb.png",
+      "alt": "MongoDB Logo",
+      "title": "MongoDB + Mongoose",
+      "letter": "M",
+      "color": "#12924F"
+    },
+    {
+      "id": 2,
+      "image": "/expressjs.png",
+      "alt": "ExpressJS Logo",
+      "title": "ExpressJS",
+      "letter": "E",
+      "color": "#383838"
+    },
+    {
+      "id": 3,
+      "image": "/react.svg",
+      "alt": "React Logo",
+      "title": "ReactJS",
+      "letter": "R",
+      "color": "#00D8FF"
+    },
+    {
+      "id": 4,
+      "image": "/nodejs.png",
+      "alt": "NodeJS Logo",
+      "title": "NodeJS",
+      "letter": "N",
+      "color": "#21A366"
+    },
+    {
+      "id": 5,
+      "image": "/nextjs-logo.svg",
+      "alt": "NextJS Logo",
+      "title": "NextJS",
+      "letter": "N",
+      "color": "#000000"
+    }
+]

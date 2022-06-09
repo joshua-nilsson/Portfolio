@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "name": "Home",
+      "url": "#home",
+      "label": "Jump Link To Home"
+    },
+    {
+      "id": 2,
+      "name": "Projects",
+      "url": "#projects",
+      "label": "Jump Link To Projects"
+    },
+    {
+      "id": 3,
+      "name": "Experience",
+      "url": "#experience",
+      "label": "Jump Link To Experience"
+    },
+    {
+      "id": 4,
+      "name": "Techstack",
+      "url": "#techstack",
+      "label": "Jump Link To Techstack"
+    },
+    {
+      "id": 5,
+      "name": "Contact",
+      "url": "#contact",
+      "label": "Jump Link To Contact"
+    }
+]
