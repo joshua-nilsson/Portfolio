@@ -4,8 +4,8 @@
         "es2021": true
     },
     "extends": [
-        // "next",
-        // "plugin:react/recommended"
+        "next",
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {

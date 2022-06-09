@@ -11,8 +11,8 @@ export const LOGO = 'https://res.cloudinary.com/joshuanilsson/portfolio/logo';
 export const MISC = 'https://res.cloudinary.com/joshuanilsson/portfolio/misc';
 
 export const STORY_FORGE_GITHUB = 'https://github.com/joshua-nilsson/story-forge';
-export const STORY_FORGE_PROTOTYPE = 'https://www.figma.com/proto/xs0yGfTZHR6Q2pEmNVsG6x/Story-Forge-Prototype?page-id=4%3A0&node-id=1466%3A6201&viewport=-8269%2C-294%2C0.41&scaling=min-zoom';
-export const PORTFOLIO_PROTOTYPE = 'https://www.figma.com/proto/Fq5Gq3pRwkOwtMFU6nZkZA/Portfolio-Prototype?page-id=4%3A0&node-id=4%3A0&viewport=3355%2C821%2C0.45&scaling=min-zoom';
+export const STORY_FORGE_PROTOTYPE = 'https://www.figma.com/proto/Fq5Gq3pRwkOwtMFU6nZkZA/Prototypes?page-id=4%3A0&node-id=1325%3A3424&viewport=3355%2C821%2C0.45&scaling=min-zoom';
+export const PORTFOLIO_PROTOTYPE = 'https://www.figma.com/proto/Fq5Gq3pRwkOwtMFU6nZkZA/Prototypes?page-id=4%3A0&node-id=1311%3A4336&viewport=3355%2C821%2C0.45&scaling=min-zoom';
 
 export const STORY_FORGE = 'https://storyforge.joshuanilsson.com/login';
 export const GITHUB = 'https://github.com/joshua-nilsson';
