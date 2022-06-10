@@ -119,7 +119,7 @@ export const SlideTitleTheme = tw(motion.span)`
 	invisible
 	w-11/12
 	mb-4
-	text-center font-medium tracking-wider uppercase text-white
+	text-base text-center font-medium tracking-wider uppercase text-white
 	transition-all ease-in-out duration-100
 	msm:(mb-2.5
 		text-xs
@@ -127,7 +127,7 @@ export const SlideTitleTheme = tw(motion.span)`
 	sm:(w-full mb-4
 		text-sm
 		overflow[initial] text-overflow[initial] whitespace-normal)
-	md:text-base lg:text-sm xl:text-base
+	xl:text-base
 `;
 
 export const BubbleLinkTheme = styled(motion.a)`
