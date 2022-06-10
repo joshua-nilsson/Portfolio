@@ -92,7 +92,7 @@ export const TechstackIcon = styled.img`
     antialiased
     select-none
     transition-all ease-in-out duration-150
-    hover:(mb-2 rounded-full)
+    hover:mb-2
     msm:(w-14 h-14) sm:(w-16 h-16)
     `}
 
