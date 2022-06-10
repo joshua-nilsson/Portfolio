@@ -85,7 +85,8 @@ module.exports = {
       storyForge: 'url("https://res.cloudinary.com/joshuanilsson/portfolio/misc/story-forge.png")',
       storyForgePreview: 'url("https://res.cloudinary.com/joshuanilsson/portfolio/misc/story-forge-preview.png")',
       gradient: 'linear-gradient(180deg, rgba(93, 80, 191, 1) 35%, rgba(150, 128, 255, 1) 100%)',
-      scrollbar: 'linear-gradient(135deg, rgba(93, 80, 191, 1) 0%, rgba(150, 128, 255, 1) 100%);'
+      scrollbar: 'linear-gradient(135deg, rgba(93, 80, 191, 1) 0%, rgba(150, 128, 255, 1) 100%)',
+      line: 'linear-gradient(90deg, rgba(93, 80, 191, 1) 0%, rgba(150, 128, 255, 1) 100%)',
     },
   },
   variants: {

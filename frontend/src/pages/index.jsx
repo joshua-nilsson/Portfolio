@@ -1,10 +1,13 @@
 import { HeadContainer, HeaderContainer, MainContainer, FooterContainer } from "../containers"
 import { Loading } from "../components"
 import { useState, useEffect } from "react";
+import tw from "twin.macro";
 
 const IndexPage = () => {
   const [loading, setLoading] = useState(true)
-  useEffect(() => setLoading(false), [])
+  useEffect(() => setTimeout(() => {
+    setLoading(false)
+  }, 60000), [])
 
   return (
     <>
@@ -18,7 +21,7 @@ const IndexPage = () => {
       ) : (
         <Loading>
           <Loading.Frame>
-            <Loading.Loader/>
+            <Loading.Loader tw="bg-purpleCircle! bg-cover!"/>
           </Loading.Frame>
         </Loading>
       )}

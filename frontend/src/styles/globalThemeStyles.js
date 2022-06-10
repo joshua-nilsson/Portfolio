@@ -22,9 +22,9 @@ export const HeadingTheme = tw.h2`
 `;
 
 export const LineTheme = tw.hr`
-	w-12 h-1.5
+	w-12 h-2
 	mt-1
-	bg-primary border-none rounded-3xl
+	bg-line border-none rounded-3xl
 	msm:w-16 sm:w-20 md:w-24 lg:w-24
 `;
 
