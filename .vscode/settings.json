@@ -1,9 +1,7 @@
 {
+    "editor.formatOnSave": false,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
-    "editor.formatOnSave": false,
-    "emmet.preferences": {
-        
-    }
+    "emmet.preferences": {}
 }

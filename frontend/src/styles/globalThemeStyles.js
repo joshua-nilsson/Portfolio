@@ -120,14 +120,13 @@ export const SlideTitleTheme = tw(motion.span)`
 	w-11/12
 	mb-4
 	text-center font-medium tracking-wider uppercase text-white
-	overflow-hidden overflow-ellipsis whitespace-nowrap
 	transition-all ease-in-out duration-100
 	msm:(mb-2.5
-		text-xs)
+		text-xs
+		overflow-hidden overflow-ellipsis whitespace-nowrap)
 	sm:(w-full mb-4
 		text-sm
-		overflow[initial] text-overflow[initial] whitespace-normal
-		)
+		overflow[initial] text-overflow[initial] whitespace-normal)
 	md:text-base lg:text-sm xl:text-base
 `;
 
