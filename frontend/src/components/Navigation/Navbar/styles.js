@@ -7,6 +7,7 @@ export const Wrapper = tw(motion.aside)`
     flex justify-center items-center
     sticky bottom-5
     mt-16 space-x-8
+    opacity-0
     z-50
     sm:bottom-10
     lg:ml-28

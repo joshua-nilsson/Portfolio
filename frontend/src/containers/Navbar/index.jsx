@@ -66,7 +66,7 @@ const NavbarContainer = ({ children, ...props }) => {
       {children}
       <Navbar
         whileInView={{ opacity: 1 }}
-        initial={{opacity: 0}}
+        initial={{ opacity: 0 }}
         transition={{
           duration: 0.5,
           ease: 'easeInOut'
