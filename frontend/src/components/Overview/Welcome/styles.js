@@ -63,7 +63,7 @@ export const Image = styled.img`
     ${tw`
     w-3/4
     mt-5
-    rounded-full
+    rounded-full filter[drop-shadow(0 3px 3px rgba(34,34,34,.5))]
     object-contain
     select-none pointer-events-none
     sm:(max-w-md
