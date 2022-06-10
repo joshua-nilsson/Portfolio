@@ -12,7 +12,6 @@ export const Wrapper = styled(motion.div)`
 
 export const CircleGroup = styled(motion.div)`
     ${tw`
-    hidden
     relative
     pt-12 pb-36
     opacity-0
@@ -27,11 +26,10 @@ export const CircleGroup = styled(motion.div)`
     & > img:nth-child(3) { ${tw`right-[5%] bottom-[0%] w-[25%] xl:right[2.5%]`} }
 `;
 
-export const Circle = styled(CircleTheme)`
-    ${tw`
-    block
+export const Circle = tw(CircleTheme)`
+    hidden
     opacity-[15%]
-    `}
+    md:block
 `;
 
 export const PreviewGroup = tw(motion.div)`
