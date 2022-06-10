@@ -5,9 +5,7 @@ import tw from "twin.macro";
 
 const IndexPage = () => {
   const [loading, setLoading] = useState(true)
-  useEffect(() => setTimeout(() => {
-    setLoading(false)
-  }, 60000), [])
+  useEffect(() => setLoading(false), [])
 
   return (
     <>
