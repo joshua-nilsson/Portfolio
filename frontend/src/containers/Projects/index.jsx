@@ -236,7 +236,8 @@ const ProjectsContainer = () => {
                       >
                       <AiOutlineGithub />
                     </Project.Link>
-                    {/* <Project.Link
+                    {index < 5 &&
+                    <Project.Link
                     href={project?.projectURL}
                     rel="external"
                     aria-label={`Visit My ${project?.title} Project`}
@@ -248,7 +249,8 @@ const ProjectsContainer = () => {
                     variants={popVariant}
                     >
                       <HiOutlineExternalLink />
-                    </Project.Link> */}
+                    </Project.Link>
+                  }
                   </Project.Box>
                 </Project.Group>
               </Project.Frame>
