@@ -236,7 +236,7 @@ const ProjectsContainer = () => {
                       >
                       <AiOutlineGithub />
                     </Project.Link>
-                    {index < 4 &&
+                    {index < 5 &&
                     <Project.Link
                     href={project?.projectURL}
                     rel="external"
