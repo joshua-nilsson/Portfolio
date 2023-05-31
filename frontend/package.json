@@ -1,7 +1,4 @@
 {
-  "engines": {
-   "node": ">=18.0.0"
-  },
   "babelMacros": {
     "twin": {
       "config": "./tailwind.config.js",
