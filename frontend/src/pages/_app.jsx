@@ -1,5 +1,6 @@
 import "../styles/globalStyles.css"
 import { GlobalStyles } from "twin.macro"
+import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from "../components"
 import { useEffect } from "react"
 import Router from "next/router"
@@ -14,6 +15,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyles/>
+	  <Analytics />
       <GoogleAnalytics/>
       <Component {...pageProps}/>
     </>

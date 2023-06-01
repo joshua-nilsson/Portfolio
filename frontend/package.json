@@ -21,6 +21,7 @@
     "@hookform/resolvers": "^2.8.8",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
+    "@vercel/analytics": "^1.0.1",
     "autoprefixer": "^10.4.4",
     "framer-motion": "^6.3.3",
     "next": "12.1.5",
