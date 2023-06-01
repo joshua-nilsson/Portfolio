@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { Confetti } from "../../styles/globalThemeStyles"
 import { Wrapper, Icon, Headline } from './styles'
 import PropTypes from 'prop-types'
+import va from '@vercel/analytics'
 
 const Banner = ({ children, ...props }) => {
   const refAnimationInstance = useRef(null);
@@ -17,6 +18,7 @@ const Banner = ({ children, ...props }) => {
   }, []);
 
   const startAnimation = useCallback(() => {
+	va.track('newFeaturedProjectJumpLink');
     if (!intervalId) setIntervalId(setInterval(nextTickAnimation, 400));
 
     // After 4 Bursts Clear Animation, Then Reset Animation Instance
