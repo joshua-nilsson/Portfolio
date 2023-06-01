@@ -28,8 +28,8 @@ const HeaderContainer = () => (
               <Navigation.List>
                 {navigation?.map((nav, index) => (
                   <Navigation.ListItem key={nav?.name + index}>
-                    <Link href={nav?.url} passHref onClick={ () => va.track(`${nav?.name}HeaderNavigationLink`) }>
-                      <Navigation.ListItemLink aria-label={nav?.label}>
+                    <Link href={nav?.url} passHref>
+                      <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => va.track(`${nav?.name}-HeaderNavigationLink`) }>
                         {nav?.name}
                       </Navigation.ListItemLink>
                     </Link>
