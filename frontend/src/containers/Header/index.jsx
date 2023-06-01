@@ -8,6 +8,7 @@ import { AiFillGithub } from "react-icons/ai"
 import { IoLogoLinkedin } from "react-icons/io5"
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import va from '@vercel/analytics'
 
 const HeaderContainer = () => (
   <>
@@ -27,7 +28,7 @@ const HeaderContainer = () => (
               <Navigation.List>
                 {navigation?.map((nav, index) => (
                   <Navigation.ListItem key={nav?.name + index}>
-                    <Link href={nav?.url} passHref>
+                    <Link href={nav?.url} passHref onClick={ () => va.track(`${nav?.name}HeaderNavigationLink`) }>
                       <Navigation.ListItemLink aria-label={nav?.label}>
                         {nav?.name}
                       </Navigation.ListItemLink>
