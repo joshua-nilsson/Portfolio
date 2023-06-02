@@ -5,7 +5,7 @@ import * as URL from '../../constants/urls'
 import ReactTypingEffect from 'react-typing-effect'
 import tw from 'twin.macro'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '../../utils'
 
 const TechstackContainer = () => {
   const [featuredSkills, setFeaturedSkills] = useState([])
@@ -26,7 +26,7 @@ const TechstackContainer = () => {
   }, [])
 
   const handleSkillsFilter = item => {
-	track(`${item}-FilterTab`)
+	trackEvent(`${item}-FilterTab`)
 
     if (activeFilter !== item) {
       setActiveFilter(item);
@@ -118,7 +118,7 @@ const TechstackContainer = () => {
                 variation="primary"
                 data-for="resume-tooltip"
                 data-tip={`<img src="${URL.MISC}/resume.svg"/><small>Resume</small>`}
-				onClick={ () => track(`Resume-PDFLink`) }
+				onClick={ () => trackEvent(`Resume-PDFLink`) }
               >
                 <FeaturedSkills.PreviewIcon
                   src={`${URL.MISC}/download.svg`}
@@ -147,7 +147,7 @@ const TechstackContainer = () => {
                 variation="secondary"
                 data-for="resume-tooltip"
                 data-tip={`<img src="${URL.MISC}/diploma.svg"/><small>Diploma</small>`}
-				onClick={ () => track(`Diploma-PDFLink`) }
+				onClick={ () => trackEvent(`Diploma-PDFLink`) }
               >
                 <FeaturedSkills.PreviewIcon
                   src={`${URL.MISC}/jump-arrow.svg`}

@@ -13,7 +13,7 @@ import { Pagination, Mousewheel } from "swiper"
 import ReactTypingEffect from 'react-typing-effect'
 import tw from 'twin.macro'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '../../utils'
 
 const ProjectsContainer = () => {
   const [projects, setProjects] = useState([])
@@ -59,7 +59,7 @@ const ProjectsContainer = () => {
                   variation="primary"
                   data-delay-hide={250}
                   data-offset="{'top': 3}"
-                  data-for="project-button-tooltip-alt"
+                  data-for="project-button-tooltip"
                   data-tip={`
                   <p>Under Development</p>
                   <a
@@ -67,7 +67,6 @@ const ProjectsContainer = () => {
                     rel="external"
                     aria-label="Story Forge Prototype Tooltip Link" target="_blank"
                     style="user-select: none;"
-					onClick={ () => track('StoryForge-GitHubLink') }
                   >
                     <img src="${URL.LOGO}/figma.svg" alt="Figma Logo Within Tooltip Link"/>
                   </a>
@@ -88,7 +87,7 @@ const ProjectsContainer = () => {
                   variation="secondary"
                   data-delay-hide={250}
                   data-offset="{'top': 3}"
-                  data-for="project-button-tooltip-alt"
+                  data-for="project-button-tooltip"
                   data-tip={`
                   <p>Under Development</p>
                   <a
@@ -96,7 +95,6 @@ const ProjectsContainer = () => {
                     rel="external"
                     aria-label="Story Forge Prototype Tooltip Link" target="_blank"
                     style="user-select: none;"
-					onClick={ () => track('StoryForge-PreviewLink') }
                   >
                     <img src="${URL.LOGO}/figma.svg" alt="Figma Logo Within Tooltip Link"/>
                   </a>
@@ -118,13 +116,14 @@ const ProjectsContainer = () => {
                   <RiInformationLine/>
                   Preview
                   <Projects.ProjectButtonTooltip
-                    id="project-button-tooltip-alt"
+                    id="project-button-tooltip"
                     place="top"
                     type="dark"
                     effect="solid"
                     data-delay-hide={1000}
                     html={true}
                     clickable={true}
+					onMouseEnter={ () => trackEvent('StoryForge-TooltipLink') }
                   />
                 </Projects.ProjectButton>
                 {/* <Projects.ProjectButton href="${URL.STORY_FORGE}" rel="external" aria-label="Story Forge External Link &#45; Discover &amp; Create Today" target="_blank" as="a" variation="secondary">Coming Soon...</Projects.ProjectButton> */}
@@ -179,7 +178,7 @@ const ProjectsContainer = () => {
               aria-label="Preview The Story Forge Prototype With Figma"
               title="Story Forge Prototype"
               target="_blank"
-			  onClick={ () => track('StoryForge-PrototypeLink') }
+			  onClick={ () => trackEvent('StoryForge-PrototypeLink') }
             >
               <Projects.PreviewImage
                 src={`${URL.LOGO_PARAMS}/figma.png`}
@@ -237,7 +236,7 @@ const ProjectsContainer = () => {
                       whileInView={{ scale: [0.90, 1] }}
                       transition={{ duration: 0.175 }}
                       variants={popVariant}
-					  onClick={ () => track(`${project?.title?.replace(/\s+/g, '') }-GitHubLink`) }
+					  onClick={ () => trackEvent(`${project?.title?.replace(/\s+/g, '') }-GitHubLink`) }
 					>
                       <AiOutlineGithub />
                     </Project.Link>
@@ -252,7 +251,7 @@ const ProjectsContainer = () => {
                       whileHover={{ scale: [1, 0.90] }}
                       transition={{ duration: 0.175 }}
                       variants={popVariant}
-					  onClick={ () => track(`${project?.title?.replace(/\s+/g, '') }-ProjectLink`) }
+					  onClick={ () => trackEvent(`${project?.title?.replace(/\s+/g, '') }-ProjectLink`) }
                     >
                       <HiOutlineExternalLink />
                     </Project.Link>
@@ -308,7 +307,7 @@ const ProjectsContainer = () => {
                     whileInView={{ scale: [0.90, 1] }}
                     transition={{ duration: 0.175 }}
                     variants={popVariant}
-					onClick={ () => track(`${project?.title?.replace(/\s+/g, '') }-CompanyLink`) }
+					onClick={ () => trackEvent(`${project?.title?.replace(/\s+/g, '') }-CompanyLink`) }
                   >
                     <HiOutlineExternalLink />
                   </Project.Link>

@@ -8,7 +8,7 @@ import { IoLogoLinkedin } from "react-icons/io5"
 import { HiOutlineExternalLink } from "react-icons/hi"
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '../../utils'
 
 const FooterContainer = () => {
   const currentYear = new Date().getFullYear()
@@ -77,7 +77,7 @@ const FooterContainer = () => {
               <Navigation.IconLink
 			    aria-label="Footer Logo - Jump To Home"
 				dangerouslySetInnerHTML={{ __html: logo.imageAlt }}
-				onClick={ () => track(`Home-FooterLogoLink`) }
+				onClick={ () => trackEvent(`Home-FooterLogoLink`) }
 			  />
             </Link>
             <Navigation.NavigationGroup>
@@ -86,7 +86,7 @@ const FooterContainer = () => {
                   {navigation?.map((nav, index) => (
                     <Navigation.ListItem key={nav?.name + index}>
                       <Link href={nav?.url} passHref>
-                        <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => track(`${nav?.name}-FooterLink`) }>
+                        <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => trackEvent(`${nav?.name}-FooterLink`) }>
                           {nav?.name}
                         </Navigation.ListItemLink>
                       </Link>
@@ -102,7 +102,7 @@ const FooterContainer = () => {
                   rel="external"
                   aria-label="Preview Joshua Nilsson's Portfolio Prototype With Figma"
                   target="_blank"
-				  onClick={ () => track(`Figma-FooterLink`) }
+				  onClick={ () => trackEvent(`Figma-FooterLink`) }
 				>
                   <Footer.Image src={`${URL.LOGO_PARAMS}/figma.png`} alt="Figma Logo For Joshua Nilsson's Porfolio Prototype" />
                   &nbsp;Figma Prototype&nbsp;
@@ -117,7 +117,7 @@ const FooterContainer = () => {
                 aria-label="Visit Joshua Nilsson's GitHub Repository"
                 title="GitHub"
                 target="_blank"
-				onClick={ () => track(`GitHub-FooterLink`) }
+				onClick={ () => trackEvent(`GitHub-FooterLink`) }
 			  >
                 <AiFillGithub />
               </Navigation.SocialLink>
@@ -127,7 +127,7 @@ const FooterContainer = () => {
                 aria-label="Visit Joshua Nilsson's LinkedIn Profile"
                 title="LinkedIn"
                 target="_blank"
-				onClick={ () => track(`LinkedIn-FooterLink`) }
+				onClick={ () => trackEvent(`LinkedIn-FooterLink`) }
 			  >
                 <IoLogoLinkedin />
               </Navigation.SocialLink>

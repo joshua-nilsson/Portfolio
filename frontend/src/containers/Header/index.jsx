@@ -8,7 +8,7 @@ import { AiFillGithub } from "react-icons/ai"
 import { IoLogoLinkedin } from "react-icons/io5"
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '../../utils'
 
 const HeaderContainer = () => (
   <>
@@ -24,7 +24,7 @@ const HeaderContainer = () => (
 			<Navigation.IconLink
 				aria-label="Home Logo - Jump To Home"
 				dangerouslySetInnerHTML={{ __html: logo.image }}
-				onClick={ () => track(`Home-HeaderLogoLink`) }
+				onClick={ () => trackEvent(`Home-HeaderLogoLink`) }
 			/>
           </Link>
           <Navigation.NavigationGroup>
@@ -33,7 +33,7 @@ const HeaderContainer = () => (
                 {navigation?.map((nav, index) => (
                   <Navigation.ListItem key={nav?.name + index}>
                     <Link href={nav?.url} passHref>
-                      <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => track(`${nav?.name}-HeaderLink`) }>
+                      <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => trackEvent(`${nav?.name}-HeaderLink`) }>
                         {nav?.name}
                       </Navigation.ListItemLink>
                     </Link>
@@ -49,7 +49,7 @@ const HeaderContainer = () => (
               aria-label="Visit Joshua Nilsson's GitHub Repository"
               title="GitHub"
               target="_blank"
-			  onClick={ () => track(`GitHub-HeaderLink`) }
+			  onClick={ () => trackEvent(`GitHub-HeaderLink`) }
 			>
               <AiFillGithub />
             </Navigation.SocialLink>
@@ -59,7 +59,7 @@ const HeaderContainer = () => (
               aria-label="Visit Joshua Nilsson's LinkedIn Profile"
               title="LinkedIn"
               target="_blank"
-			  onClick={ () => track(`LinkedIn-HeaderLink`) }
+			  onClick={ () => trackEvent(`LinkedIn-HeaderLink`) }
 			>
               <IoLogoLinkedin />
             </Navigation.SocialLink>

@@ -12,7 +12,7 @@ import { HiAtSymbol } from "react-icons/hi"
 import ReactTypingEffect from 'react-typing-effect'
 import tw from 'twin.macro'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '../../utils'
 
 const ContactContainer = () => {
   const refAnimationInstance = useRef(null);
@@ -85,7 +85,7 @@ const ContactContainer = () => {
         <Contact.InfoGroup
           href="mailto:joshuanilssonx@gmail.com"
           aria-label="Send A Message To Joshua Nilsson's Email Address"
-		  onClick={ () => track(`Email-ContactLink`) }
+		  onClick={ () => trackEvent(`Email-ContactLink`) }
         >
           <Contact.InfoIcon
             src={`${URL.MISC}/email.svg`}
@@ -111,7 +111,7 @@ const ContactContainer = () => {
 		<Contact.InfoGroup
 		  href="tel:+1 (918)-237-3612"
 		  aria-label="Call Joshua Nilsson's Phone Number"
-		  onClick={ () => track(`Phone-ContactLink`) }
+		  onClick={ () => trackEvent(`Phone-ContactLink`) }
 		>
           <Contact.InfoIcon
             src={`${URL.MISC}/phone.svg`}
@@ -179,7 +179,7 @@ const ContactContainer = () => {
               <Contact.FormButton
                 disabled={isEmpty}
                 isLoading={isLoading}
-				onClick={ () => track(`SubmitButton-ContactForm`) }
+				onClick={ () => trackEvent(`SubmitButton-ContactForm`) }
               >
                 {isEmpty && 
                 <Contact.FormButtonTooltip

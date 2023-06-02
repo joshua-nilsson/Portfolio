@@ -11,7 +11,7 @@ import { HiOutlineExternalLink } from "react-icons/hi"
 import ReactTypingEffect from 'react-typing-effect'
 import tw from 'twin.macro'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
+import { trackEvent } from '../../utils'
 
 const ExperiencesContainer = () => {
   const [experiences, setExperiences] = useState([])
@@ -185,7 +185,7 @@ const ExperiencesContainer = () => {
                       whileInView={{ scale: [0.90, 1] }}
                       transition={{ duration: 0.175 }}
                       variants={popVariant}
-					  onClick={ () => track(`${certificate?.title?.replace(/\s+/g, '') }-Link`) }
+					  onClick={ () => trackEvent(`${certificate?.title?.replace(/\s+/g, '') }-Link`) }
                     >
                       <HiOutlineExternalLink />
                     </Certificate.Link>

@@ -73,6 +73,7 @@ export const ProjectButton = styled(ButtonTheme)`
         cursor-default
         transition-all duration-300
         after:(bottom-[-10%]
+			   bg-tertiary!
                border-t-tertiary)!
         xs:text-xs sm:text-sm
         `}
