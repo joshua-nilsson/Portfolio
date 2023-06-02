@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { Confetti } from "../../styles/globalThemeStyles"
 import { Wrapper, Icon, Headline } from './styles'
 import PropTypes from 'prop-types'
-import va from '@vercel/analytics'
+import { track } from '@vercel/analytics'
+import { event } from "nextjs-google-analytics";
 
 const Banner = ({ children, ...props }) => {
   const refAnimationInstance = useRef(null);
@@ -18,7 +19,14 @@ const Banner = ({ children, ...props }) => {
   }, []);
 
   const startAnimation = useCallback(() => {
-	va.track('newFeaturedProjectJumpLink');
+	track('NewFeaturedProject-BannerLink');
+	  
+	event("visit_new_featured_project", {
+		category: "Navigation",
+		label: "NewFeaturedProject-BannerLink",
+		value: "Visit New Featured Project"
+	});
+
     if (!intervalId) setIntervalId(setInterval(nextTickAnimation, 400));
 
     // After 4 Bursts Clear Animation, Then Reset Animation Instance
