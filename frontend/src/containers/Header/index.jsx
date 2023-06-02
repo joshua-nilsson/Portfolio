@@ -24,7 +24,7 @@ const HeaderContainer = () => (
 			<Navigation.IconLink
 				aria-label="Home Logo - Jump To Home"
 				dangerouslySetInnerHTML={{ __html: logo.image }}
-				onClick={ () => track(`Home-LogoLink`) }
+				onClick={ () => track(`Home-HeaderLogoLink`) }
 			/>
           </Link>
           <Navigation.NavigationGroup>

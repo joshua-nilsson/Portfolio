@@ -8,6 +8,7 @@ import { IoLogoLinkedin } from "react-icons/io5"
 import { HiOutlineExternalLink } from "react-icons/hi"
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import { track } from '@vercel/analytics'
 
 const FooterContainer = () => {
   const currentYear = new Date().getFullYear()
@@ -73,7 +74,11 @@ const FooterContainer = () => {
         <ThemeProvider theme={{ navigationType: "footer" }}>
           <Navigation area="footer">
             <Link href="#home" passHref>
-              <Navigation.IconLink aria-label="Footer Logo - Jump To Home" dangerouslySetInnerHTML={{ __html: logo.imageAlt }}/>
+              <Navigation.IconLink
+			    aria-label="Footer Logo - Jump To Home"
+				dangerouslySetInnerHTML={{ __html: logo.imageAlt }}
+				onClick={ () => track(`Home-FooterLogoLink`) }
+			  />
             </Link>
             <Navigation.NavigationGroup>
               <Navigation.Menu aria-label="Home Navigation">
@@ -81,7 +86,7 @@ const FooterContainer = () => {
                   {navigation?.map((nav, index) => (
                     <Navigation.ListItem key={nav?.name + index}>
                       <Link href={nav?.url} passHref>
-                        <Navigation.ListItemLink aria-label={nav?.label}>
+                        <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => track(`${nav?.name}-FooterLink`) }>
                           {nav?.name}
                         </Navigation.ListItemLink>
                       </Link>
@@ -90,13 +95,15 @@ const FooterContainer = () => {
                 </Navigation.List>
               </Navigation.Menu>
               <Footer.Box>
-                <Footer.Info>Coded with <strong>React</strong> &#43; <br/> <strong>Tailwind</strong> &amp; <strong>Styled-Components</strong></Footer.Info>
+                <Footer.Info>Crafted with <strong>React</strong> &#43; <br/> <strong>Tailwind</strong> &amp; <strong>Styled-Components</strong></Footer.Info>
                 <Footer.Info>Copyright <sup>&reg;</sup> {currentYear} | Joshua Nilsson</Footer.Info>
                 <Footer.Link
                   href={URL.PORTFOLIO_PROTOTYPE}
                   rel="external"
                   aria-label="Preview Joshua Nilsson's Portfolio Prototype With Figma"
-                  target="_blank">
+                  target="_blank"
+				  onClick={ () => track(`Figma-FooterLink`) }
+				>
                   <Footer.Image src={`${URL.LOGO_PARAMS}/figma.png`} alt="Figma Logo For Joshua Nilsson's Porfolio Prototype" />
                   &nbsp;Figma Prototype&nbsp;
                   <HiOutlineExternalLink />
@@ -109,7 +116,9 @@ const FooterContainer = () => {
                 rel="external"
                 aria-label="Visit Joshua Nilsson's GitHub Repository"
                 title="GitHub"
-                target="_blank">
+                target="_blank"
+				onClick={ () => track(`GitHub-FooterLink`) }
+			  >
                 <AiFillGithub />
               </Navigation.SocialLink>
               <Navigation.SocialLink
@@ -117,7 +126,9 @@ const FooterContainer = () => {
                 rel="external"
                 aria-label="Visit Joshua Nilsson's LinkedIn Profile"
                 title="LinkedIn"
-                target="_blank">
+                target="_blank"
+				onClick={ () => track(`LinkedIn-FooterLink`) }
+			  >
                 <IoLogoLinkedin />
               </Navigation.SocialLink>
             </Navigation.SocialGroup>

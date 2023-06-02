@@ -13,6 +13,7 @@ import { Pagination, Mousewheel } from "swiper"
 import ReactTypingEffect from 'react-typing-effect'
 import tw from 'twin.macro'
 import PropTypes from 'prop-types'
+import { track } from '@vercel/analytics'
 
 const ProjectsContainer = () => {
   const [projects, setProjects] = useState([])
@@ -66,6 +67,7 @@ const ProjectsContainer = () => {
                     rel="external"
                     aria-label="Story Forge Prototype Tooltip Link" target="_blank"
                     style="user-select: none;"
+					onClick={ () => track('StoryForge-GitHubLink') }
                   >
                     <img src="${URL.LOGO}/figma.svg" alt="Figma Logo Within Tooltip Link"/>
                   </a>
@@ -94,6 +96,7 @@ const ProjectsContainer = () => {
                     rel="external"
                     aria-label="Story Forge Prototype Tooltip Link" target="_blank"
                     style="user-select: none;"
+					onClick={ () => track('StoryForge-PreviewLink') }
                   >
                     <img src="${URL.LOGO}/figma.svg" alt="Figma Logo Within Tooltip Link"/>
                   </a>
@@ -176,6 +179,7 @@ const ProjectsContainer = () => {
               aria-label="Preview The Story Forge Prototype With Figma"
               title="Story Forge Prototype"
               target="_blank"
+			  onClick={ () => track('StoryForge-PrototypeLink') }
             >
               <Projects.PreviewImage
                 src={`${URL.LOGO_PARAMS}/figma.png`}
@@ -233,20 +237,22 @@ const ProjectsContainer = () => {
                       whileInView={{ scale: [0.90, 1] }}
                       transition={{ duration: 0.175 }}
                       variants={popVariant}
-                      >
+					  onClick={ () => track(`${project?.title?.replace(/\s+/g, '') }-GitHubLink`) }
+					>
                       <AiOutlineGithub />
                     </Project.Link>
                     {index < 6 &&
                     <Project.Link
-                    href={project?.projectURL}
-                    rel="external"
-                    aria-label={`Visit My ${project?.title} Project`}
-                    title={`${project?.title}`}
-                    target="_blank"
-                    whileInView={{ scale: [0.90, 1] }}
-                    whileHover={{ scale: [1, 0.90] }}
-                    transition={{ duration: 0.175 }}
-                    variants={popVariant}
+                      href={project?.projectURL}
+                      rel="external"
+                      aria-label={`Visit My ${project?.title} Project`}
+                      title={`${project?.title}`}
+                      target="_blank"
+                      whileInView={{ scale: [0.90, 1] }}
+                      whileHover={{ scale: [1, 0.90] }}
+                      transition={{ duration: 0.175 }}
+                      variants={popVariant}
+					  onClick={ () => track(`${project?.title?.replace(/\s+/g, '') }-ProjectLink`) }
                     >
                       <HiOutlineExternalLink />
                     </Project.Link>
@@ -302,6 +308,7 @@ const ProjectsContainer = () => {
                     whileInView={{ scale: [0.90, 1] }}
                     transition={{ duration: 0.175 }}
                     variants={popVariant}
+					onClick={ () => track(`${project?.title?.replace(/\s+/g, '') }-CompanyLink`) }
                   >
                     <HiOutlineExternalLink />
                   </Project.Link>
