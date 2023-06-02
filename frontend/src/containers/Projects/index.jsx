@@ -123,7 +123,7 @@ const ProjectsContainer = () => {
                     data-delay-hide={1000}
                     html={true}
                     clickable={true}
-					onMouseEnter={ () => trackEvent('StoryForge-TooltipLink') }
+					onClick={ () => trackEvent('StoryForge-TooltipLink') }
                   />
                 </Projects.ProjectButton>
                 {/* <Projects.ProjectButton href="${URL.STORY_FORGE}" rel="external" aria-label="Story Forge External Link &#45; Discover &amp; Create Today" target="_blank" as="a" variation="secondary">Coming Soon...</Projects.ProjectButton> */}
