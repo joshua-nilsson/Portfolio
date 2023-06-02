@@ -24,7 +24,7 @@ const Banner = ({ children, ...props }) => {
 	event("visit_featured_project", {
 		category: "Navigation",
 		label: "FeaturedProject-BannerLink",
-		value: "Visit Featured Project"
+		value: 1
 	});
 
     if (!intervalId) setIntervalId(setInterval(nextTickAnimation, 400));
