@@ -8,7 +8,7 @@ import { AiFillGithub } from "react-icons/ai"
 import { IoLogoLinkedin } from "react-icons/io5"
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import va from '@vercel/analytics'
+import { track } from '@vercel/analytics'
 
 const HeaderContainer = () => (
   <>
@@ -21,7 +21,11 @@ const HeaderContainer = () => (
       <ThemeProvider theme={{ navigationType: "header" }}>
         <Navigation area="header">
           <Link href="#home" passHref>
-            <Navigation.IconLink aria-label="Home Logo - Jump To Home" dangerouslySetInnerHTML={{ __html: logo.image }}/>
+			<Navigation.IconLink
+				aria-label="Home Logo - Jump To Home"
+				dangerouslySetInnerHTML={{ __html: logo.image }}
+				onClick={ () => track(`Home-LogoLink`) }
+			/>
           </Link>
           <Navigation.NavigationGroup>
             <Navigation.Menu aria-label="Home Navigation">
@@ -29,7 +33,7 @@ const HeaderContainer = () => (
                 {navigation?.map((nav, index) => (
                   <Navigation.ListItem key={nav?.name + index}>
                     <Link href={nav?.url} passHref>
-                      <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => va.track(`${nav?.name}-HeaderNavigationLink`) }>
+                      <Navigation.ListItemLink aria-label={nav?.label} onClick={ () => track(`${nav?.name}-HeaderLink`) }>
                         {nav?.name}
                       </Navigation.ListItemLink>
                     </Link>
@@ -44,7 +48,9 @@ const HeaderContainer = () => (
               rel="external"
               aria-label="Visit Joshua Nilsson's GitHub Repository"
               title="GitHub"
-              target="_blank">
+              target="_blank"
+			  onClick={ () => track(`GitHub-HeaderLink`) }
+			>
               <AiFillGithub />
             </Navigation.SocialLink>
             <Navigation.SocialLink
@@ -52,7 +58,9 @@ const HeaderContainer = () => (
               rel="external"
               aria-label="Visit Joshua Nilsson's LinkedIn Profile"
               title="LinkedIn"
-              target="_blank">
+              target="_blank"
+			  onClick={ () => track(`LinkedIn-HeaderLink`) }
+			>
               <IoLogoLinkedin />
             </Navigation.SocialLink>
           </Navigation.SocialGroup>

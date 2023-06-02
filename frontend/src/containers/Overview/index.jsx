@@ -7,6 +7,7 @@ import { TiArrowSortedDown } from "react-icons/ti"
 import ReactTypingEffect from 'react-typing-effect'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import { track } from '@vercel/analytics'
 
 const OverviewContainer = () => {
   const [cards, setCards] = useState([]);
@@ -88,6 +89,7 @@ const OverviewContainer = () => {
                 role="link"
                 aria-label="Jump To My Projects"
                 variation="primary"
+				onClick={ () => track(`Project-JumpLink`) }
               >
                  Projects
                 <TiArrowSortedDown />
@@ -98,6 +100,7 @@ const OverviewContainer = () => {
                 role="link"
                 aria-label="Jump To My Experience"
                 variation="secondary"
+				onClick={ () => track(`Experience-JumpLink`) }
               >
                 Experience
                 <TiArrowSortedDown />

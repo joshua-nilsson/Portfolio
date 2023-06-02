@@ -9,6 +9,7 @@ import { IoNewspaper } from "react-icons/io5"
 import { BiCodeBlock } from "react-icons/bi"
 import Link from "next/link"
 import PropTypes from 'prop-types'
+import { track } from '@vercel/analytics'
 
 const NavbarContainer = ({ children, ...props }) => {
   const refAnimationInstance = useRef(null);
@@ -56,6 +57,7 @@ const NavbarContainer = ({ children, ...props }) => {
   }
 
   const handleClick = () => {
+	track(`FeaturedProject-NavbarLink`)
     startAnimation()
     setIsActive(true)
     setTimeout(() => setIsActive(false), 2750)
@@ -77,7 +79,7 @@ const NavbarContainer = ({ children, ...props }) => {
             {navigation?.map((nav, index) => (
               <Navbar.ListItem key={nav?.name + index} passHref>
                 <Link href={nav?.url} passHref>
-                  <Navbar.ListItemLink aria-label={nav?.label}>
+                  <Navbar.ListItemLink aria-label={nav?.label} onClick={ () => track(`${nav?.name}-NavbarLink`) }>
                     <Navbar.ListItemIcon>{Icons[index]}</Navbar.ListItemIcon>
                     <Navbar.ListItemText>{nav?.name}</Navbar.ListItemText>
                   </Navbar.ListItemLink>
