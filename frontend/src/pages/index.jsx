@@ -19,7 +19,7 @@ const IndexPage = () => {
       ) : (
         <Loading>
           <Loading.Frame>
-            <Loading.Loader tw="bg-purpleCircle! bg-cover!"/>
+            <Loading.Loader/>
           </Loading.Frame>
         </Loading>
       )}
