@@ -2,8 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { Confetti } from "../../styles/globalThemeStyles"
 import { Wrapper, Icon, Headline } from './styles'
 import PropTypes from 'prop-types'
-import { track } from '@vercel/analytics'
-import { event } from "nextjs-google-analytics";
+import trackEvent from '../../utils'
 
 const Banner = ({ children, ...props }) => {
   const refAnimationInstance = useRef(null);
@@ -19,13 +18,7 @@ const Banner = ({ children, ...props }) => {
   }, []);
 
   const startAnimation = useCallback(() => {
-	track('FeaturedProject-BannerLink');
-	  
-	event("visit_featured_project", {
-		category: "Navigation",
-		label: "FeaturedProject-BannerLink",
-		value: 1
-	});
+	trackEvent('FeaturedProject-BannerLink');
 
     if (!intervalId) setIntervalId(setInterval(nextTickAnimation, 400));
 
