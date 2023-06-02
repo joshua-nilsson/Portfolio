@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { Confetti } from "../../styles/globalThemeStyles"
 import { Wrapper, Icon, Headline } from './styles'
 import PropTypes from 'prop-types'
-import trackEvent from '../../utils'
+import { trackEvent } from '../../utils'
 
 const Banner = ({ children, ...props }) => {
   const refAnimationInstance = useRef(null);
