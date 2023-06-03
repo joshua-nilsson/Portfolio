@@ -72,6 +72,7 @@ export const ProjectButton = styled(ButtonTheme)`
         opacity-100!
         cursor-default
         transition-all duration-300
+		before:h-[5px]!
         after:(bottom-[-10%]
 			   bg-tertiary!
                border-t-tertiary)!
