@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import { client } from '../../client'
 import * as URL from '../../constants/urls'
 import ReactTypingEffect from 'react-typing-effect'
-import tw from 'twin.macro'
 import PropTypes from 'prop-types'
+import { useMediaQuery } from 'usehooks-ts'
 import { trackEvent } from '../../utils'
 
 const TechstackContainer = () => {
@@ -13,6 +13,8 @@ const TechstackContainer = () => {
   const [filterSkills, setFilterSkills] = useState([]);
   const [activeFilter, setActiveFilter] = useState('Techstack');
   const [animateSkills, setAnimateSkills] = useState({ y: 0, opacity: 1 })
+  
+  const matches = useMediaQuery('(min-width: 1024px)');
   
   useEffect(() => {
     const queryFeaturedSkills = "*[_type == 'featured-skill'] | order(order asc)";
@@ -180,8 +182,8 @@ const TechstackContainer = () => {
           <FeaturedSkills.Group>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[0]?.imageURL}
-                alt={`${featuredSkills[0]?.title} Logo`}
+                src={featuredSkills[matches ? 0 : 1]?.imageURL}
+                alt={`${featuredSkills[matches ? 0 : 1]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
@@ -191,15 +193,15 @@ const TechstackContainer = () => {
           <FeaturedSkills.Group>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[1]?.imageURL}
-                alt={`${featuredSkills[1]?.title} Logo`}
+                src={featuredSkills[matches ? 1 : 7]?.imageURL}
+                alt={`${featuredSkills[matches ? 1 : 7]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[2]?.imageURL}
-                alt={`${featuredSkills[2]?.title} Logo`}
+                src={featuredSkills[matches ? 2 : 8]?.imageURL}
+                alt={`${featuredSkills[matches ? 2 : 8]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
@@ -209,8 +211,8 @@ const TechstackContainer = () => {
           <FeaturedSkills.Group>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[3]?.imageURL}
-                alt={`${featuredSkills[3]?.title} Logo`}
+                src={featuredSkills[matches ? 3 : 6]?.imageURL}
+                alt={`${featuredSkills[matches ? 3 : 6]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
@@ -223,8 +225,8 @@ const TechstackContainer = () => {
             </FeaturedSkill>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[5]?.imageURL}
-                alt={`${featuredSkills[5]?.title} Logo`}
+                src={featuredSkills[matches ? 5 : 3]?.imageURL}
+                alt={`${featuredSkills[matches ? 5 : 3]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
@@ -234,15 +236,15 @@ const TechstackContainer = () => {
           <FeaturedSkills.Group>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[6]?.imageURL}
-                alt={`${featuredSkills[6]?.title} Logo`}
+                src={featuredSkills[matches ? 6 : 0]?.imageURL}
+                alt={`${featuredSkills[matches ? 6 : 0]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[7]?.imageURL}
-                alt={`${featuredSkills[7]?.title} Logo`}
+                src={featuredSkills[matches ? 7 : 2]?.imageURL}
+                alt={`${featuredSkills[matches ? 7 : 2]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>
@@ -252,8 +254,8 @@ const TechstackContainer = () => {
           <FeaturedSkills.Group>
             <FeaturedSkill>
               <FeaturedSkill.Image
-                src={featuredSkills[8]?.imageURL}
-                alt={`${featuredSkills[8]?.title} Logo`}
+                src={featuredSkills[matches ? 8 : 5]?.imageURL}
+                alt={`${featuredSkills[matches ? 8 : 5]?.title} Logo`}
                 loading="lazy"
               />
             </FeaturedSkill>

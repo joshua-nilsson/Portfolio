@@ -48,7 +48,7 @@ export const PreviewBox = styled.div`
 `;
 
 export const PreviewButton = styled(ButtonTheme)`
-    ${props => props.variation === "primary" ? buttonPrimaryTheme : buttonSecondaryTheme};
+    ${props => props.variation === "primary" ? buttonPrimaryTheme : buttonSecondaryTheme}
 
     ${tw`
     flex justify-center items-center
