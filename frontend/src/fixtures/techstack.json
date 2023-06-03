@@ -3,13 +3,13 @@
       "id": 1,
       "image": "/mongodb.png",
       "alt": "MongoDB Logo",
-      "title": "MongoDB + Mongoose",
+      "title": "MongoDB",
       "letter": "M",
       "color": "#12924F"
     },
     {
       "id": 2,
-      "image": "/expressjs.png",
+      "image": "/expressjs.svg",
       "alt": "ExpressJS Logo",
       "title": "ExpressJS",
       "letter": "E",
