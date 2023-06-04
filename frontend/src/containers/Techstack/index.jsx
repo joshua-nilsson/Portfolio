@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { client } from '../../client'
 import * as URL from '../../constants/urls'
 import ReactTypingEffect from 'react-typing-effect'
+import tw from 'twin.macro'
 import PropTypes from 'prop-types'
 import { useMediaQuery } from 'usehooks-ts'
 import { trackEvent } from '../../utils'
@@ -109,7 +110,7 @@ const TechstackContainer = () => {
                 effect="solid"
                 html={true}
                 backgroundColor="#443a8c"
-                arrowColor="#7d71e0"
+				arrowColor="#7d71e0"
               />
               <FeaturedSkills.PreviewButton
                 href={`${URL.DEFAULT}/joshua-nilsson-resume.pdf`}

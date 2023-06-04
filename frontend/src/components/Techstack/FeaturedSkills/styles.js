@@ -88,9 +88,9 @@ export const PreviewTooltip = styled(ReactTooltip)`
     text-xs! tracking-wider uppercase!
     opacity-100!
     transition-all! duration-300!
-    before:(bottom[-22px]
-        border-t-secondary)!
-    after:hidden
+    before:hidden
+    after:(bottom[-20px]
+		   w-[12px] h-[12px])!
     msm:(flex flex-col justify-center items-center)!
     sm:(w-28 h-28
         text-base!)
