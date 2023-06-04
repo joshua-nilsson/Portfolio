@@ -4,17 +4,32 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'title',
+            name: 'title_1',
             title: 'Title',
             type: 'string'
         },
         {
-            name: 'imageURL',
+            name: 'imageURL_1',
             title: 'Image URL',
             type: 'url'
         },
         {
-            name: 'projectURL',
+            name: 'projectURL_1',
+            title: 'Project URL',
+            type: 'url',
+		},
+		        {
+            name: 'title_2',
+            title: 'Title',
+            type: 'string'
+        },
+        // {
+        //     name: 'imageURL_2',
+        //     title: 'Image URL',
+        //     type: 'url'
+        // },
+        {
+            name: 'projectURL_2',
             title: 'Project URL',
             type: 'url',
         },

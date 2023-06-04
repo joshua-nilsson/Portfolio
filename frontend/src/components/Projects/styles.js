@@ -186,4 +186,7 @@ export const PreviewImage = tw.img`
     duration-300!
 `;
 
-export const ProjectSlider = tw(SliderTheme)`opacity-0`;
+export const ProjectSlider = styled(SliderTheme)`
+	${tw`opacity-0`}
+	&#projectMiscSlider [class*="Box"] a:last-of-type { order: -1; }
+`;

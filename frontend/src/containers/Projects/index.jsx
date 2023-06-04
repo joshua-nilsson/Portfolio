@@ -194,6 +194,7 @@ const ProjectsContainer = () => {
 
       {/* PRIMARY PROJECTS SLIDER */}
       <Projects.ProjectSlider
+	    id="projectSlider"
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
         viewport={{ once: true }}
         transition={{ duration: 0.75, delay: 0.5 }}
@@ -234,6 +235,7 @@ const ProjectsContainer = () => {
                       title={`${project?.title} GitHub`}
                       target="_blank"
                       whileInView={{ scale: [0.90, 1] }}
+					  whileHover={{ scale: [1, 0.90] }}
                       transition={{ duration: 0.175 }}
                       variants={popVariant}
 					  onClick={ () => trackEvent(`${project?.title?.replace(/\s+/g, '') }-GitHubLink`) }
@@ -266,6 +268,7 @@ const ProjectsContainer = () => {
 
       {/* SECONDARY PROJECTS SLIDER */}
       <Projects.ProjectSlider
+	    id="projectMiscSlider"
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
         viewport={{ once: true }}
         transition={{ duration: 0.75, delay: 0.5 }}
@@ -289,28 +292,47 @@ const ProjectsContainer = () => {
           className="projectSwiper"
         >
           {projectsMisc?.map((project, index) => (
-            <SwiperSlide key={project?.title + index}>
+            <SwiperSlide key={project?.title_1 + index}>
               <Project.Frame>
-                <Project.Image src={project?.imageURL} alt={project?.title}/>
+                <Project.Image src={project?.imageURL_1} alt={project?.title_1}/>
                 <Project.Group
                   initial="rest"
                   animate="rest"
                   whileHover="hover"
                 >
-                  <Project.Title>{project?.title}</Project.Title>
-                  <Project.Link
-                    href={project?.projectURL}
-                    rel="external"
-                    aria-label={`Visit ${project?.title}`}
-                    title={`${project?.title} Website`}
-                    target="_blank"
-                    whileInView={{ scale: [0.90, 1] }}
-                    transition={{ duration: 0.175 }}
-                    variants={popVariant}
-					onClick={ () => trackEvent(`${project?.title?.replace(/\s+/g, '') }-CompanyLink`) }
-                  >
-                    <HiOutlineExternalLink />
-                  </Project.Link>
+                  <Project.Title>{project?.title_1}</Project.Title>
+				  <Project.Box>
+                    <Project.Link
+                      href={project?.projectURL_1}
+                      rel="external"
+                      aria-label={`Visit ${project?.title_1}`}
+                      title={`${project?.title_1} Website`}
+                      target="_blank"
+                      whileInView={{ scale: [0.90, 1] }}
+					  whileHover={{ scale: [1, 0.90] }}
+                      transition={{ duration: 0.175 }}
+                      variants={popVariant}
+					  onClick={ () => trackEvent(`${project?.title_1?.replace(/\s+/g, '') }-CompanyLink`) }
+                    >
+                      <HiOutlineExternalLink />
+                    </Project.Link>
+				    {project?.title_2 && (
+					  <Project.Link
+					    href={project?.projectURL_2}
+					    rel="external"
+					    aria-label={`Visit ${project?.title_2}`}
+					    title={`${project?.title_2} Website`}
+					    target="_blank"
+                        whileInView={{ scale: [0.90, 1] }}
+					    whileHover={{ scale: [1, 0.90] }}
+                        transition={{ duration: 0.175 }}
+					    variants={popVariant}
+					    onClick={ () => trackEvent(`${project?.title_2?.replace(/\s+/g, '') }-CompanyLink`) }
+					  >
+						<HiOutlineExternalLink />
+					  </Project.Link>
+				    )}
+				  </Project.Box>
                 </Project.Group>
               </Project.Frame>
             </SwiperSlide>

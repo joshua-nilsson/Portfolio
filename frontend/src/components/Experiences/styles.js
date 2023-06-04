@@ -47,19 +47,21 @@ export const Frame = styled.div`
     mt-12 mb-16 space-y-8
     lg:(
         grid
-        grid-cols-6
-        grid-rows-3
+        grid-cols-2
+        grid-rows-4
         grid-flow-row
         grid-template-rows[auto]
         gap-8
         grid-template-areas[
-        "Modere Modere Online-Image Online-Image Village-Book-Builders Village-Book-Builders"
-        "BYU-Idaho BYU-Idaho BYU-Idaho Owasso-High-School Owasso-High-School Owasso-High-School"
-        "Eagle-Scout Eagle-Scout Eagle-Scout Missionary Missionary Missionary"]
+        "Wondrium Modere"
+		"Online-Image Village-Book-Builders"
+        "BYU-Idaho Owasso-High-School"
+        "Eagle-Scout Missionary"]
         space-y-0)
     xl:gap-16
     `}
 
+	.Wondrium { grid-area: Wondrium; }
     .Modere { grid-area: Modere; }
     .Online-Image { grid-area: Online-Image; }
     .Village-Book-Builders { grid-area: Village-Book-Builders; }

@@ -14,10 +14,9 @@ export const Group = tw(SlideGroupTheme)``;
 export const Title = tw(SlideTitleTheme)``;
 
 export const Box = tw.div`
-    flex justify-center
+    flex justify-around
     w-4/5
-    xs:(justify-around
-        w-3/4)
+    xs:w-3/4
     sm:(justify-evenly
         w-full)
 `;

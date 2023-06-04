@@ -12,14 +12,17 @@ export const Card = styled.div`
     `}
 
     // RESPONSIVE IMAGE ADJUSTMENTS
-    &:nth-of-type(1) img { ${tw`w-[275px] 2xl:w-[300px]`} }
-    &:nth-of-type(2) img { ${tw`w-[250px] lg:w-[225px] 2xl:w-[250px]`} }
-    &:nth-of-type(3) img { ${tw`w-[175px] xs:w-[190px] sm:w-[210px] lg:w-[175px] 2xl:w-[215px]`} }
-    &:nth-of-type(4) img { ${tw`w-[130px] sm:w-[150px] lg:w-[120px] 2xl:w-[140px]`} }
-    &:nth-of-type(5) img { ${tw`w-[255px] 2xl:w-[290px]`} }
-    &:nth-of-type(6) { ${tw`lg:pt-4 2xl:pt-10`}}
-    &:nth-of-type(6) img { ${tw`w-[65px] sm:w-[110px] lg:w-[80px] 2xl:w-[115px]`} }
-    &:nth-of-type(7) img { ${tw`w-[110px] sm:w-[185px] lg:w-[110px] 2xl:w-[160px]`} }
+	&:nth-of-type(1) img { ${tw`w-[275px] 2xl:w-[350px]`} }
+	&:nth-of-type(1) > div { ${tw`pt-2 md:pt-0 lg:pt-3`} }
+    &:nth-of-type(2) img { ${tw`w-[275px] 2xl:w-[300px]`} }
+	&:nth-of-type(2) > div { ${tw`lg:pt-1 2xl:pt-2`} }
+    &:nth-of-type(3) img { ${tw`w-[250px] lg:w-[225px] 2xl:w-[250px]`} }
+    &:nth-of-type(4) img { ${tw`w-[175px] xs:w-[190px] sm:w-[210px] lg:w-[175px] 2xl:w-[215px]`} }
+    &:nth-of-type(5) img { ${tw`w-[130px] sm:w-[150px] lg:w-[120px] 2xl:w-[140px]`} }
+    &:nth-of-type(6) img { ${tw`w-[255px] 2xl:w-[290px]`} }
+    &:nth-of-type(7) { ${tw`lg:pt-4 2xl:pt-10`}}
+    &:nth-of-type(7) img { ${tw`w-[65px] sm:w-[110px] lg:w-[80px] 2xl:w-[115px]`} }
+    &:nth-of-type(8) img { ${tw`w-[110px] sm:w-[185px] lg:w-[110px] 2xl:w-[160px]`} }
 `;
 
 export const Frame = tw.div`
