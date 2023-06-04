@@ -3,7 +3,7 @@ import tw from "twin.macro"
 
 export const Wrapper = styled.div`
     ${tw`
-    flex justify-evenly items-center
+    flex justify-evenly items-start
     my-24
     xs:(justify-around
         mt-20)

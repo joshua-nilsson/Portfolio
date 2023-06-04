@@ -29,10 +29,11 @@ const BrandsContainer = () => {
         </Marquee>
       </Brands.Group>
       <Brands.Group type="mobile">
+		{/* IGNORE SIXTH INDEX FOR EVEN MOBILE COLUMNS - ADJUST AS NEEDED */}
         {brands?.map((brand, index) => index < 6 && <Brand src={brand?.imageURL} alt={brand?.title} loading="lazy" key={brand?.title + index}/>)}
       </Brands.Group>
       <Brands.Group type="mobile">
-        {brands?.map((brand, index) => index >= 6 && <Brand src={brand?.imageURL} alt={brand?.title} loading="lazy" key={brand?.title + index}/>)}
+        {brands?.map((brand, index) => index >= 7 && <Brand src={brand?.imageURL} alt={brand?.title} loading="lazy" key={brand?.title + index}/>)}
       </Brands.Group>
     </Brands>
   )
