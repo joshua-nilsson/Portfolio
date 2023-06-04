@@ -60,6 +60,7 @@ const OverviewContainer = () => {
             id="me"
             src={`${URL.MISC}/me.png`}
             alt="Joshua Nilsson"
+			title="Yours Truly"
           />
           <Welcome.Techstack>
             {techstack?.map((tech, index) => (
